@@ -112,12 +112,14 @@ export async function handler() {
       `;
 
       const html = generateEmailHtml(
-        "Test Assignment Reminder",
-        additionalTextBeforeButton,
-        "Take Test",
-        assignmentUrl,
-        additionalTextAfterButton,
+        assignment.userEmail, // email
+        "Test Assignment Reminder", // subject
+        additionalTextBeforeButton, // bodyContent
+        "Take Test", // buttonText
+        assignmentUrl, // linkUrl
+        additionalTextAfterButton, // additionalText
         {
+          // options
           logoPosition: "bottom",
           logoSize: "small",
           buttonSize: "default",
