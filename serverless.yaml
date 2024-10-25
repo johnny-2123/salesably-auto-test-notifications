@@ -1,0 +1,22 @@
+service: daily-status-report
+
+plugins:
+  - serverless-webpack
+  - serverless-offline
+
+custom:
+  webpack:
+    includeModules: true
+    webpackConfig: ./webpack.config.cjs
+
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: dev
+  region: us-east-1
+
+functions:
+  dailyStatusReport:
+    handler: index.handler
